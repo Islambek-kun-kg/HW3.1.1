@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">Homework 3.1.1</string>
+    <string name="Ichiro">Ichiro`s shop</string>
+    <string name="login">Введите логин</string>
+    <string name="password">Введите пароль</string>
+    <string name="log">Войти</string>
+    <string name="forget">Забыли пароль?</string>
+    <string name="fo">Вспомнили данные?</string>
+    <string name="login1">Вы вошли в систему!</string>
+    <string name="name">Введите свое имя</string>
+    <string name="surName">Введите свое фамилие</string>
+    <string name="newLogin">Придумайте логин</string>
+    <string name="newPassword">Придумайте пароль </string>
+    <string name="newAcc">Создать </string>
+
+</resources>
