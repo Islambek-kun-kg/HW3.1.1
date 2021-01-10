@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         if (addLogin.getText().toString().equals(login)) {
             if (!(addPassword.getText().toString().equals(""))) {
-                int length = addPassword.length();
+                int length = addPassword.getText().length();
                 if (length > 16) {
                     builder.setMessage("Длинна пароля не может составлять больше 16 символов").setNegativeButton(
                             "Окей", new DialogInterface.OnClickListener() {
