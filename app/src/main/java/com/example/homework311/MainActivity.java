@@ -40,18 +40,29 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         if (addLogin.getText().toString().equals(login)) {
             if (!(addPassword.getText().toString().equals(""))) {
-                if (addPassword.getText().toString().equals(password)) {
-                    Intent intent = new Intent(MainActivity.this, Main.class);
-                    startActivity(intent);
-                } else {
-                    builder.setMessage("Неверный пароль, введите заново!").setNegativeButton("Окей", new DialogInterface.OnClickListener() {
+                int length = addPassword.length();
+                if (length > 16) {
+                    builder.setMessage("Длинна пароля не может составлять больше 16 символов").setNegativeButton(
+                            "Окей", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     addPassword.setText(null);
                                 }
                             });
-                    builder.create();
-                    builder.show();
+                } else {
+                    if (addPassword.getText().toString().equals(password)) {
+                        Intent intent = new Intent(MainActivity.this, Main.class);
+                        startActivity(intent);
+                    } else {
+                        builder.setMessage("Неверный пароль, введите заново!").setNegativeButton("Окей", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                addPassword.setText(null);
+                            }
+                        });
+                        builder.create();
+                        builder.show();
+                    }
                 }
             } else {
                 Toast.makeText(MainActivity.this, "Введите пароль!", Toast.LENGTH_SHORT).show();
